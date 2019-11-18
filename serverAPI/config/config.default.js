@@ -12,6 +12,12 @@ module.exports = appInfo => {
    **/
   const config = exports = {};
 
+  config.middleware = ['compress'];
+
+  // 配置compress
+  config.compress = {
+    threshold: 2048 // 超过2048B进行压缩，不写默认为1024B
+  }
   config.mysql = {
     client: {
       // host
