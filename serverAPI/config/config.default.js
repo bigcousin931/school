@@ -18,6 +18,18 @@ module.exports = appInfo => {
   config.compress = {
     threshold: 2048 // 超过2048B进行压缩，不写默认为1024B
   }
+  // 配置跨域
+  config.security = {
+    csrf: {
+      enable: false,
+      ignoreJSON: true
+    },
+    domainWhiteList: ['http://localhost:8080']
+  };
+  config.cors = {
+    origin: '*',
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
+  };
   config.mysql = {
     client: {
       // host
